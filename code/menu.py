@@ -4,7 +4,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, COLOR_RED, MENU_OPTION, COLOR_WHITE
+from code.Const import WIN_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_NEON, COLOR_CIANO
 
 
 class Menu:
@@ -18,11 +18,11 @@ class Menu:
         pygame.mixer_music.play(-1)
         while True:
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(80, "Nome Do", COLOR_RED, ((WIN_WIDTH / 2), 150))
-            self.menu_text(80, "Jogo", COLOR_RED, ((WIN_WIDTH / 2), 250))
+            self.menu_text(80, "Shadowed", COLOR_CIANO, ((WIN_WIDTH / 2), 150))
+            self.menu_text(80, "Paths", COLOR_NEON, ((WIN_WIDTH / 2), 200))
 
             for i in range(len(MENU_OPTION)):
-                self.menu_text(50, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 630 + 40 * i))
+                self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 630 + 40 * i))
 
             pygame.display.flip()
 
