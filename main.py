@@ -13,3 +13,5 @@ while True:
             print('Saindo...')
             pygame.quit()  # Fechar janela
             quit()  # fechar o pygame
+
+
