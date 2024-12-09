@@ -5,7 +5,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, MENU_OPTION, COLOR_WHITE, COLOR_NEON, COLOR_CIANO, COLOR_GREEN
+from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_NEON, C_CIANO, C_GREEN
 
 
 class Menu:
@@ -21,14 +21,14 @@ class Menu:
         while True:
             # Desenhada as imagens
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(80, "Shadowed", COLOR_CIANO, ((WIN_WIDTH / 2), 150))
-            self.menu_text(80, "Paths", COLOR_NEON, ((WIN_WIDTH / 2), 200))
+            self.menu_text(80, "Shadowed", C_CIANO, ((WIN_WIDTH / 2), 150))
+            self.menu_text(80, "Paths", C_NEON, ((WIN_WIDTH / 2), 200))
 
             for i in range(len(MENU_OPTION)):
                 if i == menu_option:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_GREEN, ((WIN_WIDTH / 2), 630 + 40 * i))
+                    self.menu_text(40, MENU_OPTION[i], C_GREEN, ((WIN_WIDTH / 2), 630 + 40 * i))
                 else:
-                    self.menu_text(40, MENU_OPTION[i], COLOR_WHITE, ((WIN_WIDTH / 2), 630 + 40 * i))
+                    self.menu_text(40, MENU_OPTION[i], C_WHITE, ((WIN_WIDTH / 2), 630 + 40 * i))
 
             pygame.display.flip()
 
