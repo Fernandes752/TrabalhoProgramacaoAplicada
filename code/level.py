@@ -7,10 +7,12 @@ import pygame
 from pygame import Surface, Rect
 from pygame.font import Font
 
+from code.Enemy import Enemy
 from code.Entity import Entity
 from code.EntityFactory import EntityFactory
-from code.Const import WIN_HEIGHT, COLOR_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME
+from code.Const import WIN_HEIGHT, C_WHITE, MENU_OPTION, EVENT_ENEMY, SPAWN_TIME, C_ORANGE, C_PINK
 from code.EntityMediator import EntityMediator
+from code.Player import Player
 
 
 class Level:
@@ -35,6 +37,16 @@ class Level:
             for ent in self.entity_list:
                 self.window.blit(source=ent.surf, dest=ent.rect)
                 ent.move()
+                if isinstance(ent, (Player, Enemy)):
+                    shoot = ent.shoot()
+                    if shoot is not None:
+                        self.entity_list.append(shoot)
+                if ent.name == 'Player1':
+                    self.level_text(text_size=50, text=f'Player1 - Health: {ent.health} | Score: {ent.score}',
+                                    text_color=C_ORANGE, text_pos=(30, 30))
+                if ent.name == 'Player2':
+                    self.level_text(text_size=50, text=f'Player2 - Health: {ent.health} | Score: {ent.score}',
+                                    text_color=C_ORANGE, text_pos=(30,70))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -45,10 +57,10 @@ class Level:
 
             # Texto printado
             self.level_text(text_size=20, text=f'{self.name} - Timeout: {self.timeout / 1000 :.1f}s',
-                            text_color=COLOR_WHITE, text_pos=(10, 5))
-            self.level_text(text_size=20, text=f'fps: {clock.get_fps() :.0f}', text_color=COLOR_WHITE,
+                            text_color=C_WHITE, text_pos=(10, 5))
+            self.level_text(text_size=20, text=f'fps: {clock.get_fps() :.0f}', text_color=C_WHITE,
                             text_pos=(10, WIN_HEIGHT - 35))
-            self.level_text(text_size=20, text=f'entidades: {len(self.entity_list)}', text_color=COLOR_WHITE,
+            self.level_text(text_size=20, text=f'entidades: {len(self.entity_list)}', text_color=C_WHITE,
                             text_pos=(10, WIN_HEIGHT - 20))
             pygame.display.flip()
 
