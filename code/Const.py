@@ -3,7 +3,7 @@ import pygame
 # C
 
 C_WHITE = (180, 220, 220)
-C_CIANO = (0, 255, 200)
+C_CIAN = (0, 255, 200)
 C_NEON = (0, 100, 80)
 C_GREEN = (0, 255, 100)
 C_ORANGE = (255, 255, 255)
@@ -143,8 +143,27 @@ SPAWN_TIME = 3000
 # T
 
 TIMEOUT_STEP = 100  # 100ms
-TIMEOUT_LEVEL = 20000  # 20s
+TIMEOUT_LEVEL = 5000  # 20s
 
 # w
 WIN_WIDTH = 1400
 WIN_HEIGHT = 1000
+
+# S
+
+SCORE_POS = {'Title': (WIN_WIDTH / 2, 50),
+             'EnterName': (WIN_WIDTH / 2, 150),
+             'Label': (WIN_WIDTH / 2, 200),
+             'Name': (WIN_WIDTH / 2, 250),
+             0: (WIN_WIDTH / 2, 300),
+             1: (WIN_WIDTH / 2, 350),
+             2: (WIN_WIDTH / 2, 400),
+             3: (WIN_WIDTH / 2, 450),
+             4: (WIN_WIDTH / 2, 500),
+             5: (WIN_WIDTH / 2, 550),
+             6: (WIN_WIDTH / 2, 600),
+             7: (WIN_WIDTH / 2, 650),
+             8: (WIN_WIDTH / 2, 700),
+             9: (WIN_WIDTH / 2, 750),
+
+             }

@@ -5,7 +5,7 @@ import pygame.image
 from pygame import Surface, Rect
 from pygame.font import Font
 
-from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_NEON, C_CIANO, C_GREEN
+from code.Const import WIN_WIDTH, MENU_OPTION, C_WHITE, C_NEON, C_CIAN, C_GREEN
 
 
 class Menu:
@@ -21,7 +21,7 @@ class Menu:
         while True:
             # Desenhada as imagens
             self.window.blit(source=self.surf, dest=self.rect)
-            self.menu_text(80, "Shadowed", C_CIANO, ((WIN_WIDTH / 2), 150))
+            self.menu_text(80, "Shadowed", C_CIAN, ((WIN_WIDTH / 2), 150))
             self.menu_text(80, "Paths", C_NEON, ((WIN_WIDTH / 2), 200))
 
             for i in range(len(MENU_OPTION)):
