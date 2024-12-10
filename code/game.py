@@ -1,5 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import sys
 
 import pygame
 
@@ -37,4 +38,5 @@ class Game:
                 pygame.quit()  # Fechar janela
                 quit()  # Finalizar pygame
             else:
-                pass
+                pygame.quit()
+                sys.exit()

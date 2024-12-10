@@ -27,11 +27,11 @@ ENTITY_SPEED = {
     'Level2Bg5': 5,
     'Level2Bg6': 6,
     'Player1': 12,
-    'Player1Shot': 12,
+    'Player1Shot': 15,
     'Player2': 12,
-    'Player2Shot': 12,
+    'Player2Shot': 15,
     'Enemy1': 6,
-    'Enemy1Shot': 9,
+    'Enemy1Shot': 11,
     'Enemy2': 6,
     'Enemy2Shot': 10,
 }
@@ -143,7 +143,7 @@ SPAWN_TIME = 3000
 # T
 
 TIMEOUT_STEP = 100  # 100ms
-TIMEOUT_LEVEL = 5000  # 20s
+TIMEOUT_LEVEL = 20000  # 20s
 
 # w
 WIN_WIDTH = 1400
